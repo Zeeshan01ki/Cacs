@@ -1,4 +1,4 @@
-```python
+
 import streamlit as st
 
 # Page configuration
@@ -67,4 +67,3 @@ if user_input:
         "role": "assistant",
         "content": response
     })
-```
