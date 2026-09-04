@@ -1,26 +1,16 @@
-
-print("🎉 Welcome to EventBot!")
-print("Type 'bye' to exit.")
-
-while True:
-    a = input("You: ").lower()
-
-    if a == "hi":
-        print("Bot: Hello! How can I help you?")
-    elif a == "events":
-        print("Bot: Tech Workshop, Cybersecurity Seminar, Cloud Meetup.")
-    elif a == "tech":
-        print("Bot: Tech Workshop is available for all students.")
-    elif a == "cyber":
-        print("Bot: Cybersecurity Seminar covers basic security topics.")
-    elif a == "cloud":
-        print("Bot: Cloud Meetup focuses on AWS and Azure.")
-    elif a == "date":
-        print("Bot: Choose your event date during registration.")
-    elif a == "mode":
-        print("Bot: Events are available Online and Offline.")
-    elif a == "bye":
-        print("Bot: Goodbye! See you at the event! 🎟️")
-        break
+import streamlit as st
+a=st.chat_input("Ask me anything")
+if a:
+    st.chat_message("user").write(a)
+    if a.lower()=="hello":
+        st.chat_message("assistant").write("Hello! How can I help you today?")
+    elif a.lower()=="how are you?":
+        st.chat_message("assistant").write("I'm just a bot, but I'm doing great! How about you?")
+    elif a.lower()=="what is your name?":
+        st.chat_message("assistant").write("I'm a chatbot created by OpenAI. You can call me ChatGPT!")
+    elif a.lower()=="what can you do?":
+        st.chat_message("assistant").write("I can answer questions, provide information, and have conversations on a wide range of topics. Feel free to ask me anything!")
+    elif a.lower()=="bye":
+        st.chat_message("assistant").write("Goodbye! Have a great day!")
     else:
-        print("Bot: Sorry, I don't understand.")
+        st.chat_message("assistant").write("I'm sorry, I don't understand that. Can you please rephrase your question or ask something else?")
